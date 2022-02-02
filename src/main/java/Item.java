@@ -36,7 +36,12 @@ public class Item {
   }
 
   public void setPrice(double price) {
-    this.price = price;
+    //If the price is not positive, it should be set to zero
+    if (price > 0) {
+      this.price = price;
+    } else {
+      this.price = 0;
+    }
   }
 
   public int getYearOfProduction() {

@@ -2,30 +2,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemQuantity {
-  public List<Item>items=new ArrayList<>();
-  public double quantity ;
+  public Item item;
+  public int quantity ;
 
-  public List<Item> getItems() {
-    return items;
+  public ItemQuantity(){ };
+
+  public ItemQuantity(Item item, int quantity) {
+    this.item = item;
+    this.quantity = quantity;
   }
 
-  public void setItems(List<Item> items) {
-    this.items = items;
+  public Item getItem() {
+    return item;
   }
 
-  public double getQuantity() {
+  public void setItem(Item item) {
+    this.item = item;
+  }
+
+  public int getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(double quantity) {
-    this.quantity = quantity;
+  public void setQuantity(int quantity) {
+    //If the quantity is not positive, it should be set to zero
+    if (quantity > 0) {
+      this.quantity = quantity;
+    } else {
+      this.quantity = 0;
+    }
   }
-//  public  void getQuanity( Item item){
-//    int quanity = 0;
-//    for (int i = 0; i < items.toArray().length; i++) {
-//      quanity =quanity + 1;
-//    }
-//
-//
-//  }
+
+
 }

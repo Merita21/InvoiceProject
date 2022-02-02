@@ -1,21 +1,31 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Storage {
-  private static List<ItemQuantity> itemQuantities = new ArrayList<>();
-  public HashMap<String, ItemQuantity> allItems = new HashMap<>();
+  public HashMap<String, Item> storage;
 
+  public Storage() {
+    storage = new HashMap<>();
+  }
+  ItemQuantity itemQuantity;
 
-  public static List<ItemQuantity> getItemQuantity(String description) {
-    if (itemQuantities.quantity >= 1) {
-      return itemQuantities;
-    } else
+  public Storage(HashMap<String, Item> storage, ItemQuantity itemQuantity) {
+    this.storage = storage;
+    this.itemQuantity = itemQuantity;
+  }
+
+  public Integer getItemQuantity(String description) {
+    Item item = storage.get(description);
+    if (item == null) {
       return null;
+    }
+    else
+    return itemQuantity.getQuantity();
   }
 
-  private Map<Item,Number>Storage(List<Item> items){
-    final Map<Item,Number>
+  public void addItemQuantity(Item item, int quantity) {
+    itemQuantity.setQuantity(quantity);
+    storage.put(item.getDescription(), item);
   }
+
 }

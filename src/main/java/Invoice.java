@@ -3,16 +3,41 @@ import java.util.List;
 public class Invoice {
   public List<ItemQuantity> itemQuantities;
   public String description;
-  public static double totalCost;
+  public double totalCost;
 
-  public static double getCost(ItemQuantity itemQuantity, Item item) {
-    if (itemQuantity.quantity < 0) {
-      return itemQuantity.quantity = 0.0;
-    } else if (item.price < 0) {
-      return item.price = 0.0;
-    } else {
-      double amount = itemQuantity.quantity * item.price;
-      return totalCost = amount;
-    }
+  public Invoice(List<ItemQuantity> itemQuantities, String description, double totalCost) {
+    this.itemQuantities = itemQuantities;
+    this.description = description;
+    this.totalCost = totalCost;
   }
+
+  public List<ItemQuantity> getItemQuantities() {
+    return itemQuantities;
+  }
+
+  public void setItemQuantities(List<ItemQuantity> itemQuantities) {
+    this.itemQuantities = itemQuantities;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public double getTotalCost() {
+    return totalCost;
+  }
+
+  public void setTotalCost(double totalCost) {
+    this.totalCost = totalCost;
+  }
+
+  public double getCost(ItemQuantity itemQuantity, Item item) {
+
+      return totalCost = itemQuantity.quantity * item.price;
+    }
+
 }
