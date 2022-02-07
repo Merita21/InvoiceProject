@@ -7,7 +7,8 @@ public class Storage {
   public Storage() {
     storage = new HashMap<>();
   }
-  ItemQuantity itemQuantity;
+
+  ItemQuantity itemQuantity =new ItemQuantity();
 
   public Storage(HashMap<String, Item> storage, ItemQuantity itemQuantity) {
     this.storage = storage;

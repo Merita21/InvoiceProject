@@ -3,9 +3,12 @@ import java.util.List;
 
 public class ItemQuantity {
   public Item item;
-  public int quantity ;
+  public int quantity;
 
-  public ItemQuantity(){ };
+  public ItemQuantity() {
+  }
+
+  ;
 
   public ItemQuantity(Item item, int quantity) {
     this.item = item;
@@ -32,6 +35,4 @@ public class ItemQuantity {
       this.quantity = 0;
     }
   }
-
-
 }

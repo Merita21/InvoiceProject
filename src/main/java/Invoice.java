@@ -11,6 +11,9 @@ public class Invoice {
     this.totalCost = totalCost;
   }
 
+  public Invoice() {
+  }
+
   public List<ItemQuantity> getItemQuantities() {
     return itemQuantities;
   }
@@ -35,9 +38,8 @@ public class Invoice {
     this.totalCost = totalCost;
   }
 
-  public double getCost(ItemQuantity itemQuantity, Item item) {
+  public double getCost( ItemQuantity itemQuantity, Item item) {
 
       return totalCost = itemQuantity.quantity * item.price;
     }
-
 }
